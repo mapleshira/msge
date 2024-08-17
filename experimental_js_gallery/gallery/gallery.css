@@ -1,0 +1,91 @@
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+body {
+    font-size: 16px;
+    font-family: Verdana, sans-serif;
+}
+
+#modal-background { /* the black background that the modal sits on. basically a new <body> tag */
+    animation: fadeIn 0.1s;
+    display: none;
+    position: fixed; /* in place */
+    z-index: 1; /* on top */
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%; /* full width */
+    height: 100%; /* full height */
+    overflow: auto; /* enable scroll if needed */
+    background-color: rgb(0,0,0); /* fallback color */
+    background-color: rgba(0,0,0,0.4); /* black w/ opacity */
+}
+
+#modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 16px;
+    padding-top: 0;
+    border: 1px solid #888;
+    width: fit-content;
+    max-width: 80%;
+    border-radius: 4px;
+}
+
+#flex-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#modal-label {
+    user-select: none; 
+    margin-right: 16px;
+    font-size: 12px;
+}
+
+#modal-pic {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
+
+#close {
+    color: #aaaaaa;
+    font-weight: bold;
+    display: inline-block;
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+#close:hover, #close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.pic {
+    animation: fadeIn 0.2s forwards;
+    object-fit: cover;
+    height: 128px;
+    width: 128px;
+    border-radius: 4px;
+    margin-right: 8px;
+}
+
+.pic:hover, .pic:focus {
+    transition: all 0.2s;
+    filter: brightness(125%);
+    cursor: pointer;
+}
+
+.pic-anchor {
+    display: inline-block;
+}
